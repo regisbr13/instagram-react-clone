@@ -2,6 +2,7 @@
   "name": "instadev",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://regisbr13.github.io/instagram-react-clone/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -20,7 +21,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "submit": "react-scripts test src/__tests__/submit.test.js --reporters=default --reporters=jest-junit"
+    "submit": "react-scripts test src/__tests__/submit.test.js --reporters=default --reporters=jest-junit",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -36,5 +39,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^2.2.0"
   }
 }
