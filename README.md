@@ -6,9 +6,6 @@ O desafio desta semana e da próxima será desenvolver um *SPA (Single Page Appl
 ### Referência em Produção:
 *https://regisbr13.github.io/instagram-react-clone/*
 
-### Repositório Base (para fins de estudo):
-[https://github.com/codenation-dev/react-instagram](https://github.com/codenation-dev/react-instagram)
-
 ## Requisitos Parte 2:
 Nesta segunda parte você deverá trazer o que foi implementado na parte 1 e cuidar dos estados dos componentes, das requsições HTTP de cada Rota da aplicação e dos ciclos de vida dos componentes utilizando React Hooks e abordagem funcional, os seguintes requisitos devem ser cumpridos:
 
