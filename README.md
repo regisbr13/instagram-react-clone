@@ -4,7 +4,7 @@
 O desafio desta semana e da próxima será desenvolver um *SPA (Single Page Application)* mobile-first do **Instagram** em React.
 
 ### Referência em Produção:
-[https://vimeo.com/414861306/fc5bbd5ecc](https://vimeo.com/414861306/fc5bbd5ecc)
+*https://regisbr13.github.io/instagram-react-clone/*
 
 ### Repositório Base (para fins de estudo):
 [https://github.com/codenation-dev/react-instagram](https://github.com/codenation-dev/react-instagram)

@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const User = ({ infoUser })  => {
-  const {avatar, name, username, id } = infoUser;
+  const {avatar, name, id } = infoUser;
 
   return (
     <article className="post" data-testid="user">

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-import apiService from "../../services/apiServices";
 import SuccessMessage from "../../components/SuccessMessage";
 
 import "./UserForm.scss";

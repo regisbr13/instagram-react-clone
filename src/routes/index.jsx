@@ -1,28 +1,22 @@
-import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import React from "react";
+import { Route, Switch } from "react-router-dom";
 
-import FeedRoute from './FeedRoute';
-import UsersRoute from './UsersRoute';
-import ProfileRoute from './ProfileRoute';
-import NewUserRoute from './NewUserRoute';
+import FeedRoute from "./FeedRoute";
+import UsersRoute from "./UsersRoute";
+import ProfileRoute from "./ProfileRoute";
+import NewUserRoute from "./NewUserRoute";
 
 const Routes = () => (
   <Switch>
-    <Route exact path="/" component={FeedRoute}>
+    <Route exact path="/" component={FeedRoute}></Route>
 
-    </Route>
+    <Route exact path="/instagram-react-clone/" component={FeedRoute}></Route>
 
-    <Route exact path="/users" component={UsersRoute}>
+    <Route exact path="/users" component={UsersRoute}></Route>
 
-    </Route>
+    <Route path="/users/:id" component={ProfileRoute}></Route>
 
-    <Route path="/users/:id" component={ProfileRoute}>
-
-    </Route>
-
-    <Route path="/newuser" component={NewUserRoute}>
-
-    </Route>
+    <Route path="/newuser" component={NewUserRoute}></Route>
   </Switch>
 );
 

@@ -13,13 +13,11 @@ const FeedRoute = () => {
   const [users, setUsers] = useState([]);
   const [usersPosts, setUsersPosts] = useState([]);
 
-  const getUserFeed = async (id) => {
+  const getUser = async (id) => {
     try {
       const user = await (await apiService.getUser(id)).json();
       if (user !== "Not found") {
         setUsers((users) => [...users, user]);
-        const post = await getUserPosts(id);
-        setUsersPosts((usersPosts) => [...usersPosts, post]);
       }
     } catch (error) {
       alert("Erro ao obter usuário!");
@@ -29,7 +27,10 @@ const FeedRoute = () => {
   const getUserPosts = async (id) => {
     try {
       const response = await (await apiService.getPosts(id)).json();
-      return response;
+      if (response !== "Not found") {
+        response.userId = id;
+        setUsersPosts((usersPosts) => [...usersPosts, response]);
+      }
     } catch (error) {
       alert("Erro ao obter posts!");
     }
@@ -43,8 +44,9 @@ const FeedRoute = () => {
   const getStories = async () => {
     try {
       const response = await (await apiService.getStories()).json();
-      response.forEach(async (story) => {
-        await getUserFeed(story.userId);
+      response.forEach((story) => {
+        getUser(story.userId);
+        getUserPosts(story.userId);
       });
 
       setStories(response);
@@ -63,11 +65,17 @@ const FeedRoute = () => {
       {users.length === 0 ? (
         <Loading></Loading>
       ) : (
-        users.map((user) =>
-          usersPosts.map((posts, index) => (
-            <Posts posts={posts} getUserHandler={getUserPost} key={index}></Posts>
-          ))
-        )
+        usersPosts
+          .sort((a, b) => a.userId - b.userId)
+          .map((posts, index) => {
+            return (
+              <Posts
+                posts={posts}
+                getUserHandler={getUserPost}
+                key={index}
+              ></Posts>
+            );
+          })
       )}
     </div>
   );

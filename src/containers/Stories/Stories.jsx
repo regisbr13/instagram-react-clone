@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import Story from "../../components/Story";
 
@@ -18,7 +18,7 @@ const INITIAL_STATE = {
   }
 };
 
-const Stories = ({ stories, users, getUserHandler }) => {
+const Stories = ({ stories, getUserHandler }) => {
   const [showStory, setShowStory] = useState(false);
   const [user, setUser] = useState(INITIAL_STATE.user);
   const [story, setStory] = useState(INITIAL_STATE.story)
